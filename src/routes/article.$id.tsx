@@ -10,7 +10,7 @@ import {
   fetchArticle,
   relativeTime,
 } from "@/lib/supabase";
-import { ArticleImage } from "@/routes/index";
+import { ArticleImage } from "@/components/ArticleImage";
 
 export const Route = createFileRoute("/article/$id")({
   component: ArticleDetail,

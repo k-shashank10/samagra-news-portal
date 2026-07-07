@@ -14,7 +14,7 @@ import {
   relativeTime,
   type NewsArticle,
 } from "@/lib/supabase";
-import { ArticleImage } from "@/routes/index";
+import { ArticleImage } from "@/components/ArticleImage";
 
 export const Route = createFileRoute("/explore")({
   component: ExplorePage,

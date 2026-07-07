@@ -5,9 +5,9 @@ import { RefreshCw, Loader2 } from "lucide-react";
 
 import { AppShell } from "@/components/AppShell";
 import { CategoryBadge } from "@/components/CategoryBadge";
+import { ArticleImage } from "@/components/ArticleImage";
 import { useCategoryFilter } from "@/lib/category-store";
 import {
-  displayContent,
   displayTitle,
   fetchNews,
   PAGE_SIZE,
@@ -189,26 +189,6 @@ function GridCard({ article }: { article: NewsArticle }) {
   );
 }
 
-// Placeholder image built from category + title so cards never look empty.
-export function ArticleImage({ article }: { article: NewsArticle }) {
-  const meta = article.category ?? "General";
-  const seed = encodeURIComponent(`${article.id}-${meta}`);
-  // Use a deterministic gradient background per category color.
-  return (
-    <div className="relative h-full w-full">
-      <img
-        src={`https://picsum.photos/seed/${seed}/800/500`}
-        alt=""
-        loading="lazy"
-        className="h-full w-full object-cover"
-        onError={(e) => {
-          (e.currentTarget as HTMLImageElement).style.display = "none";
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-    </div>
-  );
-}
 
 function FeedSkeleton() {
   return (
