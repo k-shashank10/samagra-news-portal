@@ -86,8 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Samagra News — Concise AI news, all in one feed" },
       { name: "twitter:description", content: "Samagra News delivers concise, AI-summarised headlines across business, tech, health, sports and more — read on the go, mobile first." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3440d42e-528c-435d-b833-a4ee81c86dd0" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3440d42e-528c-435d-b833-a4ee81c86dd0" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/9ad1533b-fc9f-4a64-a3c2-4fb9622108ae" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/9ad1533b-fc9f-4a64-a3c2-4fb9622108ae" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
