@@ -6,6 +6,7 @@ import { RefreshCw, Loader2 } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { ArticleImage } from "@/components/ArticleImage";
+import { SaveButton } from "@/components/SaveButton";
 import { useCategoryFilter } from "@/lib/category-store";
 import {
   displayTitle,
@@ -107,6 +108,9 @@ function HeroCard({ article }: { article: NewsArticle }) {
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
         <div className="absolute left-3 top-3">
           <CategoryBadge category={article.category} size="md" />
+        </div>
+        <div className="absolute right-3 top-3">
+          <SaveButton id={article.id} />
         </div>
         <div className="absolute inset-x-0 bottom-0 p-4 text-white">
           <h3 className="font-display text-xl font-bold leading-tight line-clamp-3">
