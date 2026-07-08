@@ -75,7 +75,10 @@ function ArticleDetail() {
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               {data.source ?? "Samagra"} · {relativeTime(data.created_at)}
             </p>
-            <div className="prose prose-sm max-w-none whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">
+            <div
+              className="prose prose-sm max-w-none whitespace-pre-line leading-relaxed text-foreground/85"
+              style={{ fontSize: "var(--reader-size, 15px)" }}
+            >
               {displayContent(data) || "No content available."}
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-1">
