@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
-import { Menu } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Menu, Search } from "lucide-react";
 import { BottomNav } from "./BottomNav";
 import { CategoryDrawer } from "./CategoryDrawer";
 import { useCategoryFilter } from "@/lib/category-store";
@@ -32,6 +33,14 @@ export function AppShell({
             {category ? `Filtered · ${category}` : "All categories"}
           </p>
         </div>
+        <Link
+          to="/search"
+          search={{ q: "" }}
+          aria-label="Search"
+          className="rounded-md p-2 hover:bg-muted"
+        >
+          <Search className="h-5 w-5" />
+        </Link>
       </header>
 
       <main className={fullBleed ? "flex-1" : "flex-1 pb-24"}>{children}</main>

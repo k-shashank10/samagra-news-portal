@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, Loader2 } from "lucide-react";
 
 import { CategoryBadge } from "@/components/CategoryBadge";
 import { BottomNav } from "@/components/BottomNav";
+import { SaveButton } from "@/components/SaveButton";
 import {
   displayContent,
   displayTitle,
@@ -77,17 +78,20 @@ function ArticleDetail() {
             <div className="prose prose-sm max-w-none whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">
               {displayContent(data) || "No content available."}
             </div>
-            {data.url && (
-              <a
-                href={data.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
-              >
-                Read original source
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            )}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <SaveButton id={data.id} variant="pill" />
+              {data.url && (
+                <a
+                  href={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5"
+                >
+                  Read original source
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              )}
+            </div>
           </div>
         </article>
       )}
