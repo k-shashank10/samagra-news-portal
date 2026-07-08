@@ -30,3 +30,12 @@ Here is the breakdown of how this application executes its core logic:
 
 ### Phase 3: AI Automation Integration
 * Leveraged automated agents via Make.com to handle content generation, background processing, or data updates seamlessly.
+
+
+## 📦 Project Blueprints & Assets
+
+To help you recreate or understand this build step-by-step, explore the implementation files inside the `/docs` directory:
+
+* [🤖 Lovable AI Prompts](https://github.com/k-shashank10/samagra-news-portal/blob/06309ce7f0c5a9d806c54b5fab42ce070b93bc6f/NEWS%20Portal/docs/lovable-prompts.md) - The exact prompts used to generate the frontend layout and logic.
+* [🗄️ Supabase Database Schema](./docs/Supabase%20newsflash.csv) - The table structures and data relations layout.
+* [🔀 Make.com Automation Blueprint](https://github.com/k-shashank10/samagra-news-portal/blob/06309ce7f0c5a9d806c54b5fab42ce070b93bc6f/NEWS%20Portal/docs/make-blueprint.json) - Import this JSON file directly into Make.com to instantly clone the backend workflow automation.
