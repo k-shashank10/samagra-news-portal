@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -81,6 +81,43 @@
   --cat-science: oklch(0.55 0.15 200);      /* teal-cyan */
   --cat-sports: oklch(0.6 0.18 60);         /* amber-orange */
   --cat-technology: oklch(0.5 0.15 285);    /* violet */
+}
+
+.dark {
+  --background: oklch(0.16 0.012 40);
+  --foreground: oklch(0.96 0.005 60);
+
+  --card: oklch(0.21 0.012 40);
+  --card-foreground: oklch(0.96 0.005 60);
+
+  --popover: oklch(0.21 0.012 40);
+  --popover-foreground: oklch(0.96 0.005 60);
+
+  --primary: oklch(0.7 0.17 36);
+  --primary-foreground: oklch(0.15 0.02 40);
+
+  --secondary: oklch(0.25 0.015 40);
+  --secondary-foreground: oklch(0.96 0.005 60);
+
+  --muted: oklch(0.25 0.012 40);
+  --muted-foreground: oklch(0.68 0.015 40);
+
+  --accent: oklch(0.28 0.03 40);
+  --accent-foreground: oklch(0.96 0.005 60);
+
+  --destructive: oklch(0.62 0.22 27);
+
+  --border: oklch(0.28 0.012 40);
+  --input: oklch(0.28 0.012 40);
+  --ring: oklch(0.7 0.17 36);
+
+  --cat-business: oklch(0.65 0.14 250);
+  --cat-entertainment: oklch(0.68 0.2 330);
+  --cat-general: oklch(0.65 0.03 260);
+  --cat-health: oklch(0.7 0.15 155);
+  --cat-science: oklch(0.7 0.15 200);
+  --cat-sports: oklch(0.72 0.16 60);
+  --cat-technology: oklch(0.68 0.15 285);
 }
 
 @layer base {
