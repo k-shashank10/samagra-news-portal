@@ -37,5 +37,5 @@ Here is the breakdown of how this application executes its core logic:
 To help you recreate or understand this build step-by-step, explore the implementation files inside the `/docs` directory:
 
 * [🤖 Lovable AI Prompts](https://github.com/k-shashank10/samagra-news-portal/blob/06309ce7f0c5a9d806c54b5fab42ce070b93bc6f/NEWS%20Portal/docs/lovable-prompts.md) - The exact prompts used to generate the frontend layout and logic.
-* [🗄️ Supabase Database Schema] (https://github.com/k-shashank10/samagra-news-portal/blob/820031096a1addb59e67b1d7944e394157bb1649/NEWS%20Portal/docs/Supabase%20newsflash.csv) - The table structures and data relations layout.
+* [🗄️ Supabase Database Schema](https://github.com/k-shashank10/samagra-news-portal/blob/820031096a1addb59e67b1d7944e394157bb1649/NEWS%20Portal/docs/Supabase%20newsflash.csv) - The table structures and data relations layout.
 * [🔀 Make.com Automation Blueprint](https://github.com/k-shashank10/samagra-news-portal/blob/06309ce7f0c5a9d806c54b5fab42ce070b93bc6f/NEWS%20Portal/docs/make-blueprint.json) - Import this JSON file directly into Make.com to instantly clone the backend workflow automation.
