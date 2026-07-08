@@ -31,9 +31,9 @@ Display rule: always show ai_title if it is not null/empty; if ai_title is
 null or empty, fall back to title. Apply the same fallback for
 content: prefer ai_content, fall back to content. Never show both.
 
-=====================================================
+===================
 NAVIGATION
-=====================================================
+===================
 
 Bottom navigation bar (persistent, 4 tabs): Feed, Explore, Saved, Account.
   - Feed and Explore are functional per the specs below.
@@ -50,9 +50,9 @@ Burger menu (slide-out drawer, opened from a menu icon in the top bar):
     changed again, and be visible somewhere on the Feed screen (e.g. a
     small label or chip showing the currently selected category).
 
-=====================================================
+=================
 FEED PAGE
-=====================================================
+=================
 
   - The top article (most recent by published_at) renders as a large
     "hero card": full-width image, ai_title (with fallback) overlaid or
@@ -69,9 +69,9 @@ FEED PAGE
   - Do NOT include a share button or a "+" create/compose CTA anywhere
     on the Feed or detail view — this is a read-only news app.
 
-=====================================================
+====================
 EXPLORE PAGE
-=====================================================
+====================
 
   - Full-screen, vertically scrollable article cards — one article
     fills exactly one viewport (1 viewport : 1 news article), snapping
@@ -84,9 +84,9 @@ EXPLORE PAGE
   - Also respects the active category filter set from the burger menu.
   - No share button, no "+" CTA here either.
 
-=====================================================
+===================
 DESIGN SYSTEM
-=====================================================
+===================
 
   - Display/heading font: Libre Franklin (bold weights for titles/headers)
   - Body font: Inter (regular/medium weights for body copy, captions, nav labels)
@@ -99,9 +99,9 @@ DESIGN SYSTEM
     so the same category always looks identical across Feed, Explore, and
     the burger menu.
 
-=====================================================
+==================
 RESPONSIVENESS
-=====================================================
+==================
 
   - The entire UI must be adaptive and built mobile-first: single-column
     layouts, thumb-reachable bottom nav, comfortable tap targets, and
