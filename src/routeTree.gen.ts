@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as SavedRouteImport } from './routes/saved'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArticleIdRouteImport } from './routes/article.$id'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SavedRoute = SavedRouteImport.update({
   id: '/saved',
   path: '/saved',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/explore': typeof ExploreRoute
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
   '/article/$id': typeof ArticleIdRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/explore': typeof ExploreRoute
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
   '/article/$id': typeof ArticleIdRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,28 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/explore': typeof ExploreRoute
   '/saved': typeof SavedRoute
+  '/search': typeof SearchRoute
   '/article/$id': typeof ArticleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/account' | '/explore' | '/saved' | '/article/$id'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/explore'
+    | '/saved'
+    | '/search'
+    | '/article/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/account' | '/explore' | '/saved' | '/article/$id'
-  id: '__root__' | '/' | '/account' | '/explore' | '/saved' | '/article/$id'
+  to: '/' | '/account' | '/explore' | '/saved' | '/search' | '/article/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/explore'
+    | '/saved'
+    | '/search'
+    | '/article/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,11 +98,19 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   ExploreRoute: typeof ExploreRoute
   SavedRoute: typeof SavedRoute
+  SearchRoute: typeof SearchRoute
   ArticleIdRoute: typeof ArticleIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/saved': {
       id: '/saved'
       path: '/saved'
@@ -124,18 +154,9 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   ExploreRoute: ExploreRoute,
   SavedRoute: SavedRoute,
+  SearchRoute: SearchRoute,
   ArticleIdRoute: ArticleIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
